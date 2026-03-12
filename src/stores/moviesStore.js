@@ -7,12 +7,31 @@ export const moviesStore = defineStore('counter', () => {
   const loading = ref(false)
 
   // * actions
+  const fetchAllMovies = async () => {
+    loading.value = true
+
+    try {
+      const queries = ['the', 'woman', 'war']
+
+      const responses = await Promise.all(
+        queries.map((q) => fetch(`https://imdb.iamidiotareyoutoo.com/search?q=${q}`)),
+      )
+
+      const json = await Promise.all(responses.map((r) => r.json()))
+
+      movies.value = json.flatMap((data) => data.description)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      loading.value = false
+    }
+  }
   const fetchMovies = async () => {
     loading.value = true
     console.log('waiing!!!')
 
     try {
-      const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=the')
+      const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=woman')
       const data = await response.json()
       movies.value = data.description
       console.log(data)
@@ -30,5 +49,6 @@ export const moviesStore = defineStore('counter', () => {
     loading,
 
     fetchMovies,
+    fetchAllMovies,
   }
 })

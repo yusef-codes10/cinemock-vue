@@ -6,7 +6,7 @@ import { onMounted } from 'vue'
 const myStore = moviesStore()
 
 onMounted(() => {
-  myStore.fetchMovies()
+  myStore.fetchAllMovies()
 })
 </script>
 
