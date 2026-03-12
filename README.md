@@ -1,44 +1,39 @@
-# .
+# Cinemock
 
-This template should help get you started developing with Vue 3 in Vite.
+## 📖 Overview
 
-## Recommended IDE Setup
+Another Cinemock, this time it was built with Vue3 and tailwind css, focusing more on api handling, and optimization.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Preview
 
-## Recommended Browser Setup
+![App Screenshot](/public/images/preview.png)
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 🚀 Live Demo
 
-## Customize configuration
+not yet
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## ✨ Features
 
-## Project Setup
+- Responsible tailwind design
+- Fast and secure API fetching.
+- Modern design and sleek look
 
-```sh
-npm install
+## 🛠 Tech Stack
+
+- Vue 3
+- Tailwind CSS
+- IMDB API
+
+## ⚙️ Installation
+
+You have to install the latest version of node.
+
+```bash
+    git clone https://github.com/yusef-codes10/cinemock-vue
+    cd cinemock-vue
+    npm run dev
 ```
 
-### Compile and Hot-Reload for Development
+## 👨‍💻 Author
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Yusef Codes
