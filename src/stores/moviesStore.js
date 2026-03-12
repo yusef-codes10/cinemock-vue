@@ -52,3 +52,5 @@ export const moviesStore = defineStore('counter', () => {
     fetchAllMovies,
   }
 })
+
+// TODO: lazy loading and optimization for the api
