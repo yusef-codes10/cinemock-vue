@@ -11,7 +11,9 @@ onMounted(() => {
 
 <template>
   <div>
-    <h1 class="text-blue-300">Movies</h1>
+    <div class="movies" v-for="movie in myStore.movies" :key="movie.title">
+      {{ movie.title }}
+    </div>
   </div>
 </template>
 
