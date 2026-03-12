@@ -7,13 +7,13 @@ const route = useRoute()
 
 <template>
   <div class="flex flex-col h-screen">
-    <NavBar />
-
-    <div v-if="route.name === 'Home'" class="flex-1 flex items-center justify-center bg-cover bg-center hero-bg">
+    <div v-if="route.name === 'Home'" class="flex-1 bg-cover bg-center hero-bg">
+      <NavBar />
       <RouterView />
     </div>
-
     <div v-else class="flex-1">
+      <NavBar />
+
       <RouterView />
     </div>
   </div>
