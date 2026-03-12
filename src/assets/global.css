@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+:root {
+  --brand-color: #E63F22;
+  --barnd-hover: #C2331B;
+
+
+  --secondary-bg-color: #2D2D2D;
+  --secondary-bg-hover: #414141;
+
+  --text-main: #fff;
+  --text-secondary: #BCBAC2;
+
+
+  -main-bg: #000000;
+
+  /* fonts */
+  --font-title: 'Montserrat', sans-serif;
+  --font-main: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
