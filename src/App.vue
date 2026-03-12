@@ -6,12 +6,15 @@ const route = useRoute()
 </script>
 
 <template>
-  <div class="hero-section">
+  <div class="h-screen">
     <NavBar />
     <div
       v-if="route.name === 'Home'"
-      class="hero-section bg-cover bg-center min-h-screen"
-      style="background-image: url('/images/home-bg.jpg')"
+      class="hero-section bg-cover bg-center"
+      style="
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(/images/hero.jpg);
+      "
     >
       <RouterView />
     </div>
