@@ -7,14 +7,7 @@ const route = useRoute()
 
 <template>
   <div class="flex flex-col h-screen">
-    <div
-      v-if="route.name === 'Home'"
-      class="flex-1 bg-cover bg-center"
-      style="
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url(/images/hero.jpg);
-      "
-    >
+    <div v-if="route.name === 'Home'" class="flex-1 bg-cover bg-center hero-bg">
       <NavBar />
       <RouterView />
     </div>
@@ -25,3 +18,9 @@ const route = useRoute()
     </div>
   </div>
 </template>
+
+<style scoped>
+.hero-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/images/hero.jpg);
+}
+</style>

@@ -2,14 +2,13 @@
 </script>
 
 <template>
-  <nav class="flex justify-between items-center">
-    <h1 class="text-cyan-600 m-1.5">logo</h1>
+  <nav class="flex justify-around items-center pt-1 pb-1 pr-2 pl-2">
+    <h1 class="logo">Cinemcok</h1>
     <ul class="inline-flex font-bold gap-1">
-      <li>Home</li>
+      <li>Movies</li>
+      <li>Shows</li>
       <li>About</li>
-      <li>Pizza</li>
-      <li>Out</li>
     </ul>
-    <button class="bg-red-600 bg-opacity-25 p-1.5 font-bold cursor-pointer m-2">Click</button>
+    <button>Click</button>
   </nav>
 </template>
