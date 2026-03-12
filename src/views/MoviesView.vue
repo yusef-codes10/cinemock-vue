@@ -11,8 +11,9 @@ onMounted(() => {
 
 <template>
   <div>
-    <div class="movies" v-for="movie in myStore.movies" :key="movie.title">
-      {{ movie.title }}
+    <div v-if="myStore.loading">....Loaaaaading</div>
+    <div class="text-4xl text-red-800" v-for="movie in myStore.movies" :key="movie.title">
+      {{ movie['#TITLE'] }}
     </div>
   </div>
 </template>

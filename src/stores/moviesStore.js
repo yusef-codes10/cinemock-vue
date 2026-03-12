@@ -9,17 +9,19 @@ export const moviesStore = defineStore('counter', () => {
   // * actions
   const fetchMovies = async () => {
     loading.value = true
+    console.log('waiing!!!')
 
     try {
       const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=the')
       const data = await response.json()
-      movies.value = data
+      movies.value = data.description
       console.log(data)
     } catch (error) {
       console.log(error)
     } finally {
       // always happens regardless of try/catch blocks
       loading.value = false
+      console.log('loaded!')
     }
   }
 
