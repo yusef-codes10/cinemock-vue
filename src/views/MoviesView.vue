@@ -1,4 +1,5 @@
 <script setup>
+import MovieComponent from '@/components/MovieComponent.vue'
 import { moviesStore } from '@/stores/moviesStore.js'
 import { onMounted } from 'vue'
 
@@ -12,9 +13,7 @@ onMounted(() => {
 <template>
   <div>
     <div v-if="myStore.loading">....Loaaaaading</div>
-    <div class="text-4xl text-red-800" v-for="movie in myStore.movies" :key="movie.title">
-      {{ movie['#TITLE'] }}
-    </div>
+    <MovieComponent v-for="movie in myStore.movies" :key="movie.title" :movie="movie" />
   </div>
 </template>
 
