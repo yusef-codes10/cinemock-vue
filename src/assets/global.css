@@ -12,7 +12,7 @@
   --text-secondary: #BCBAC2;
 
 
-  -main-bg: #000000;
+  --main-bg: #000000;
 
   /* fonts */
   --font-title: 'Montserrat', sans-serif;
@@ -23,4 +23,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg);
+  font-family: var(--font-main);
+  color: var(--text-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-secondary);
 }
