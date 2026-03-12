@@ -8,6 +8,7 @@
     <h4 class="text-3xl font-bold">
       Ready to watch? Enter your email to create or restart your membership.
     </h4>
+    <input type="text" class="py-2 px-6 bg-gray-700 bg-opacity-20" placeholder="Click...." />
   </div>
 </template>
 
