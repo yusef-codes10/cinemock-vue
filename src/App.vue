@@ -15,6 +15,9 @@ const route = useRoute()
     >
       <RouterView />
     </div>
+    <div v-else>
+      <RouterView />
+    </div>
   </div>
 </template>
 
