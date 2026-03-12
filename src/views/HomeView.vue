@@ -2,6 +2,7 @@
 </script>
 
 <template>
+  <!-- ! first hero section -->
   <div class="flex flex-col items-center justify-center flex-1 space-y-3 mt-24">
     <h1 class="text-3xl md:text-4xl lg:text-6xl font-extrabold text-red-600">Unlimited movies,</h1>
     <h1 class="text-3xl md:text-4xl lg:text-6xl font-extrabold text-red-600">TV shows, and more</h1>
@@ -14,6 +15,8 @@
       <button>Get Started</button>
     </div>
   </div>
+  <!-- ! second trending now -->
+  <!-- ! 3rd faq -->
 </template>
 
 <style scoped>
