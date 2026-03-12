@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <nav class="bg-gray-700 flex justify-between items-center">
+  <nav class="flex justify-between items-center">
     <h1 class="text-cyan-600 m-1.5">logo</h1>
     <ul class="inline-flex font-bold gap-1">
       <li>Home</li>
