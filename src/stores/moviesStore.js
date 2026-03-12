@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
+export const moviesStore = defineStore('counter', () => {
   // * state
   const movies = ref([])
   const loading = ref(false)

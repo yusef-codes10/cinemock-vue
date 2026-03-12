@@ -1,4 +1,12 @@
 <script setup>
+import { moviesStore } from '@/stores/moviesStore.js'
+import { onMounted } from 'vue'
+
+const myStore = moviesStore()
+
+onMounted(() => {
+  myStore.fetchMovies()
+})
 </script>
 
 <template>
