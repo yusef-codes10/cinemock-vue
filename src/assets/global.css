@@ -1,72 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --brand-color: #E63F22;
-  --barnd-hover: #C2331B;
+@layer base {
+  :root {
+    --brand-color: #E63F22;
+    --barnd-hover: #C2331B;
 
 
-  --secondary-bg-color: #2D2D2D;
-  --secondary-bg-hover: #414141;
+    --secondary-bg-color: #2D2D2D;
+    --secondary-bg-hover: #414141;
 
-  --text-main: #fff;
-  --text-secondary: #BCBAC2;
+    --text-main: #fff;
+    --text-secondary: #BCBAC2;
 
 
-  --main-bg: #000000;
+    --main-bg: #000000;
 
-  /* fonts */
-  --font-title: 'Montserrat', sans-serif;
-  --font-main: 'Poppins', sans-serif;
-}
+    /* fonts */
+    --font-title: 'Montserrat', sans-serif;
+    --font-main: 'Poppins', sans-serif;
+  }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-body {
-  background-color: var(--main-bg);
-  font-family: var(--font-main);
-  color: var(--text-main);
-}
+  body {
+    background-color: var(--main-bg);
+    font-family: var(--font-main);
+    color: var(--text-main);
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-title);
-  color: var(--text-main);
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-title);
+    color: var(--text-main);
+  }
 
-p {
-  color: var(--text-secondary);
-}
+  p {
+    color: var(--text-secondary);
+  }
 
-.logo {
-  color: var(--brand-color);
-  font-size: 2rem;
-  font-weight: 900;
-  transition: 1s all;
-}
+  .logo {
+    color: var(--brand-color);
+    font-size: 2rem;
+    font-weight: 900;
+    transition: 1s all;
+  }
 
-.logo:hover {
-  color: var(--barnd-hover);
-}
+  .logo:hover {
+    color: var(--barnd-hover);
+  }
 
-button {
-  background-color: var(--brand-color);
-  padding: 2px 12px;
-  color: var(--text-main);
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 1s all;
+  button {
+    background-color: var(--brand-color);
+    padding: 2px 12px;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 1s all;
 
-}
+  }
 
-button:hover {
-  background-color: var(--barnd-hover);
+  button:hover {
+    background-color: var(--barnd-hover);
+  }
+
 }

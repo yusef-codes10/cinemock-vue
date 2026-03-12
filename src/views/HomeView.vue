@@ -2,8 +2,10 @@
 </script>
 
 <template>
-  <div class="black-300">
-    <h1 class="mt-2 text-cyan-100 font-mono">Hello</h1>
+  <div>
+    <h1 class="text-lg text-red-600">Unlimited movies, TV shows, and more</h1>
+    <h4>Starts at USD 3.99. Cancel anytime.</h4>
+    <h4>Ready to watch? Enter your email to create or restart your membership.</h4>
   </div>
 </template>
 
