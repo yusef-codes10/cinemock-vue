@@ -1,7 +1,10 @@
-<script setup></script>
+<script setup>
+import NavBar from './components/NavBar.vue'
+</script>
 
 <template>
-  <h1 class="text-purple-600">hey dude</h1>
+  <NavBar />
+  <RouterView />
 </template>
 
 <style scoped></style>
