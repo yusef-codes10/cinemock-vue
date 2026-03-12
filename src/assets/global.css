@@ -42,9 +42,9 @@
     color: var(--text-main);
   }
 
-  h1 {
+  /* h1 {
     font-size: clamp(1.5rem, 4vw, 3rem);
-  }
+  } */
 
   p {
     color: var(--text-secondary);
