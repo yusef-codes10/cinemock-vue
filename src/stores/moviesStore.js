@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const moviesStore = defineStore('counter', () => {
@@ -6,6 +6,7 @@ export const moviesStore = defineStore('counter', () => {
   const movies = ref([])
   const loading = ref(false)
   const favoriteMovies = ref([])
+  // const search = ref('')
 
   // * actions
   const fetchAllMovies = async () => {
@@ -29,30 +30,38 @@ export const moviesStore = defineStore('counter', () => {
   }
   const fetchMovies = async () => {
     loading.value = true
-    console.log('waiing!!!')
+    console.log('waiting!!!')
 
     try {
       const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=spider')
       const data = await response.json()
-      movies.value = data.description
-      console.log(data)
+
+      movies.value = data.description.map((movie) => ({
+        ...movie,
+        isFavorite: false,
+      }))
+
+      console.log(movies.value)
     } catch (error) {
       console.log(error)
     } finally {
-      // always happens regardless of try/catch blocks
       loading.value = false
       console.log('loaded!')
     }
   }
 
   const addToFavList = (movie) => {
+    if (favoriteMovies.value.includes(movie)) {
+      console.log('ALREAY EXISTS')
+      return
+    }
     favoriteMovies.value.push(movie)
   }
 
   // * getters
-  const allMovies = computed((search) => {
-    return movies.value.filter((movie) => movie.toLowerCase().includes(search.value.toLowerCase()))
-  })
+  // const allMovies = computed(() => {
+  //   return movies.value.filter((movie) => movie.toLowerCase().includes(search.value.toLowerCase()))
+  // })
 
   return {
     movies,
@@ -63,7 +72,7 @@ export const moviesStore = defineStore('counter', () => {
     fetchAllMovies,
     addToFavList,
 
-    allMovies,
+    // allMovies,
   }
 })
 
