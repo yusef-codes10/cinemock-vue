@@ -1,3 +1,4 @@
+import FavoriteMoviesView from '@/views/FavoriteMoviesView.vue'
 import HomeView from '@/views/HomeView.vue'
 import MoviesView from '@/views/MoviesView.vue'
 import SearchView from '@/views/SearchView.vue'
@@ -18,6 +19,11 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: SearchView,
+  },
+  {
+    path: '/favorite',
+    name: 'Favorite',
+    component: FavoriteMoviesView,
   },
 ]
 
