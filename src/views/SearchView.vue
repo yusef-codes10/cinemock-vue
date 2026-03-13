@@ -18,9 +18,12 @@ const filterdMovies = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div v-if="filterdMovies.length > 0">
     this is the search view
     <MovieComponent v-for="movie in filterdMovies" :key="movie" :movie="movie" />
+  </div>
+  <div v-else>
+    <h1>Not Found</h1>
   </div>
 </template>
 
