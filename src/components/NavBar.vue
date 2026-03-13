@@ -1,10 +1,25 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const isSearch = ref(false)
+const searchQuery = ref('')
 
 const showSearch = () => {
   isSearch.value = !isSearch.value
+}
+
+// the ruter for the search
+
+const route = useRouter()
+
+const submitSearch = () => {
+  if (!searchQuery.value) return
+  // here we push to the router of search
+  route.push({
+    name: 'Search',
+    query: { q: searchQuery.value },
+  })
 }
 </script>
 
@@ -26,6 +41,7 @@ const showSearch = () => {
         type="search"
         v-show="isSearch"
         v-model="searchQuery"
+        @keydown.enter="submitSearch"
       />
       <button class="rounded-md">Click</button>
     </div>
