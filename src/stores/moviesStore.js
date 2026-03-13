@@ -45,7 +45,9 @@ export const moviesStore = defineStore('counter', () => {
   }
 
   // * getters
-  const allMovies = computed((q) => movies.value.filter((movie) => movie.title === q))
+  const allMovies = computed((search) => {
+    return movies.value.filter((movie) => movie.toLowerCase().includes(search.value.toLowerCase()))
+  })
 
   return {
     movies,
