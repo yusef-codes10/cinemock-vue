@@ -31,3 +31,5 @@ const showSearch = () => {
     </div>
   </nav>
 </template>
+
+<!-- TODO: Now we should get the query push it to the route and get it in the search view -->
