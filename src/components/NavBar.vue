@@ -29,7 +29,7 @@ const submitSearch = () => {
     <ul class="hidden md:inline-flex gap-4">
       <li><RouterLink :to="{ name: 'Movies' }">Moives</RouterLink></li>
       <li>Shows</li>
-      <li>About</li>
+      <li><RouterLink :to="{ name: 'Favorite' }">Favorites</RouterLink></li>
     </ul>
     <div class="relative">
       <i

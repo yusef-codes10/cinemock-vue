@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const moviesStore = defineStore('counter', () => {
@@ -62,6 +62,9 @@ export const moviesStore = defineStore('counter', () => {
   // const allMovies = computed(() => {
   //   return movies.value.filter((movie) => movie.toLowerCase().includes(search.value.toLowerCase()))
   // })
+  const favList = computed(() => {
+    return movies.value.filter((movie) => movie.isFavorite === true)
+  })
 
   return {
     movies,
@@ -73,6 +76,7 @@ export const moviesStore = defineStore('counter', () => {
     // addToFavList,
 
     // allMovies,
+    favList,
   }
 })
 
