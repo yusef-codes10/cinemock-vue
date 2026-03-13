@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import { moviesStore } from '@/stores/moviesStore.js'
+import MovieComponent from '@/components/MovieComponent.vue'
 
 const route = useRoute()
 const myStore = moviesStore()
@@ -19,7 +20,7 @@ const filterdMovies = computed(() => {
 <template>
   <div>
     this is the search view
-    {{ filterdMovies['#TITLE'] }}
+    <MovieComponent v-for="movie in filterdMovies" :key="movie" :movie="movie" />
   </div>
 </template>
 
