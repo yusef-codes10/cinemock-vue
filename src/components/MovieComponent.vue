@@ -1,14 +1,18 @@
 <script setup>
 import { ref } from 'vue'
+import { moviesStore } from '@/stores/moviesStore.js'
 
 defineProps({
   movie: Object,
 })
 
 const isFav = ref(false)
+const myStore = moviesStore()
 
-const addToFavorite = () => {
+const addToFavorite = (movie) => {
   isFav.value = !isFav.value
+  myStore.addToFavList(movie)
+  console.log(myStore.favoriteMovies)
 }
 </script>
 
@@ -21,7 +25,7 @@ const addToFavorite = () => {
         class="w-full h-72 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
       />
       <i
-        @click="addToFavorite"
+        @click="addToFavorite(movie)"
         class="absolute text-3xl top-1 right-0 hover:scale-105 transition-transform duration-300"
         :class="{ 'fa-solid fa-star text-amber-300': isFav, 'fa-regular fa-star': !isFav }"
       ></i>
