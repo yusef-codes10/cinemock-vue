@@ -1,11 +1,22 @@
 <script setup>
+import MovieComponent from '@/components/MovieComponent.vue'
+import { moviesStore } from '@/stores/moviesStore.js'
+
+const myStore = moviesStore()
 </script>
 
 <template>
-  <div>
-    <h1 class="text-9xl text-cyan-600">Favorite</h1>
+  <div class="movies-grid">
+    <!-- <h1 class="text-9xl text-cyan-600">Favorite</h1> -->
+    <MovieComponent v-for="movie in myStore.favList" :key="movie['#TITLE']" :movie="movie" />
   </div>
 </template>
 
 <style scoped>
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  gap: 1rem;
+}
 </style>
