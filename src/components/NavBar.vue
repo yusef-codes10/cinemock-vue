@@ -16,13 +16,13 @@ const showSearch = () => {
       <li>Shows</li>
       <li>About</li>
     </ul>
-    <div>
+    <div class="relative">
       <i
         class="fa-brands fa-sistrix text-red-500 mx-2 cursor-pointer text-2xl"
         @click="showSearch"
       ></i>
       <input
-        class="rounded-md w-50 mx-2 px-2"
+        class="rounded-md w-50 mx-2 px-2 absolute top-1 right-30"
         type="search"
         v-show="isSearch"
         v-model="searchQuery"
