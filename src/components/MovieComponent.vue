@@ -43,3 +43,5 @@ const addToFavorite = (movie) => {
 
 <style scoped>
 </style>
+
+<!-- TODO: add the details page to see the other movies properties and make good use of them -->
