@@ -6,7 +6,9 @@ import { onMounted } from 'vue'
 const myStore = moviesStore()
 
 onMounted(() => {
-  myStore.fetchMovies()
+  if (!myStore.movies.length) {
+    myStore.fetchMovies()
+  }
 })
 </script>
 
