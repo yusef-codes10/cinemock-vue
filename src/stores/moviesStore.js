@@ -11,7 +11,7 @@ export const moviesStore = defineStore('counter', () => {
     loading.value = true
 
     try {
-      const queries = ['the', 'woman', 'war']
+      const queries = ['the', 'woman', 'war', 'spider', 'girl', 'love']
 
       const responses = await Promise.all(
         queries.map((q) => fetch(`https://imdb.iamidiotareyoutoo.com/search?q=${q}`)),
