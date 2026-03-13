@@ -5,6 +5,7 @@ export const moviesStore = defineStore('counter', () => {
   // * state
   const movies = ref([])
   const loading = ref(false)
+  const favoriteMovies = ref([])
 
   // * actions
   const fetchAllMovies = async () => {
@@ -44,6 +45,10 @@ export const moviesStore = defineStore('counter', () => {
     }
   }
 
+  const addToFavList = (movie) => {
+    favoriteMovies.value.push(movie)
+  }
+
   // * getters
   const allMovies = computed((search) => {
     return movies.value.filter((movie) => movie.toLowerCase().includes(search.value.toLowerCase()))
@@ -52,9 +57,11 @@ export const moviesStore = defineStore('counter', () => {
   return {
     movies,
     loading,
+    favoriteMovies,
 
     fetchMovies,
     fetchAllMovies,
+    addToFavList,
 
     allMovies,
   }
