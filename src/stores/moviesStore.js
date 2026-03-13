@@ -5,7 +5,7 @@ export const moviesStore = defineStore('counter', () => {
   // * state
   const movies = ref([])
   const loading = ref(false)
-  const favoriteMovies = ref([])
+  // const favoriteMovies = ref([])
   // const search = ref('')
 
   // * actions
@@ -50,13 +50,13 @@ export const moviesStore = defineStore('counter', () => {
     }
   }
 
-  const addToFavList = (movie) => {
-    if (favoriteMovies.value.includes(movie)) {
-      console.log('ALREAY EXISTS')
-      return
-    }
-    favoriteMovies.value.push(movie)
-  }
+  // const addToFavList = (movie) => {
+  //   if (favoriteMovies.value.includes(movie)) {
+  //     console.log('ALREAY EXISTS')
+  //     return
+  //   }
+  //   favoriteMovies.value.push(movie)
+  // }
 
   // * getters
   // const allMovies = computed(() => {
@@ -66,11 +66,11 @@ export const moviesStore = defineStore('counter', () => {
   return {
     movies,
     loading,
-    favoriteMovies,
+    // favoriteMovies,
 
     fetchMovies,
     fetchAllMovies,
-    addToFavList,
+    // addToFavList,
 
     // allMovies,
   }
