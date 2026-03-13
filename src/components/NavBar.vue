@@ -1,4 +1,11 @@
 <script setup>
+import { ref } from 'vue'
+
+const isSearch = ref(false)
+
+const showSearch = () => {
+  isSearch.value = !isSearch.value
+}
 </script>
 
 <template>
@@ -9,6 +16,13 @@
       <li>Shows</li>
       <li>About</li>
     </ul>
-    <button class="rounded-lg">Click</button>
+    <div>
+      <i
+        class="fa-brands fa-sistrix text-red-500 mx-2 cursor-pointer text-2xl"
+        @click="showSearch"
+      ></i>
+      <input class="rounded-md w-50 mx-2 px-2" type="search" v-show="isSearch" />
+      <button class="rounded-md">Click</button>
+    </div>
   </nav>
 </template>
