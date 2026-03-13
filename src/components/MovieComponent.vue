@@ -1,7 +1,15 @@
 <script setup>
+import { ref } from 'vue'
+
 defineProps({
   movie: Object,
 })
+
+const isFav = ref(false)
+
+const addToFavorite = () => {
+  isFav.value = !isFav.value
+}
 </script>
 
 <template>
@@ -13,7 +21,9 @@ defineProps({
         class="w-full h-72 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
       />
       <i
-        class="fa-regular fa-star absolute text-3xl top-1 right-0 hover:scale-105 transition-transform duration-300"
+        @click="addToFavorite"
+        class="absolute text-3xl top-1 right-0 hover:scale-105 transition-transform duration-300"
+        :class="{ 'fa-solid fa-star text-amber-300': isFav, 'fa-regular fa-star': !isFav }"
       ></i>
     </div>
 
