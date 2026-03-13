@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const moviesStore = defineStore('counter', () => {
@@ -44,12 +44,17 @@ export const moviesStore = defineStore('counter', () => {
     }
   }
 
+  // * getters
+  const allMovies = computed((q) => movies.value.filter((movie) => movie.title === q))
+
   return {
     movies,
     loading,
 
     fetchMovies,
     fetchAllMovies,
+
+    allMovies,
   }
 })
 
