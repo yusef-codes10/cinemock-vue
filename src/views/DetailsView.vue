@@ -1,4 +1,11 @@
 <script setup>
+const { slug } = defineProps({
+  slug: {
+    type: String,
+    required: true,
+  },
+})
+console.log(slug)
 </script>
 
 <template>
