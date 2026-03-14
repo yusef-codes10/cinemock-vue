@@ -92,6 +92,7 @@ export const moviesStore = defineStore('counter', () => {
 
   return {
     movies,
+    shows,
     loading,
     // favoriteMovies,
 
