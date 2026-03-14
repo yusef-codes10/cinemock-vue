@@ -11,8 +11,12 @@ const { slug } = defineProps({
 console.log(slug)
 //* we have to find the movie from the pinia store by the slug (title in this case)
 const myStore = moviesStore()
+const allKinds = computed(() => {
+  const all = [...myStore.movies, ...myStore.shows]
+  return all
+})
 const movie = computed(() => {
-  return myStore.movies.find((m) => m['#TITLE'] === slug)
+  return allKinds.value.find((m) => m['#TITLE'] === slug)
 })
 console.log(movie)
 </script>
