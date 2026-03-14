@@ -13,13 +13,15 @@ const searchQuery = computed(() => {
 })
 
 const filterdMovies = computed(() => {
-  return myStore.movies.filter((movie) => movie['#TITLE'].toLowerCase().includes(searchQuery.value))
+  return myStore.allKinds.filter((movie) =>
+    movie['#TITLE'].toLowerCase().includes(searchQuery.value)
+  )
 })
 </script>
 
 <template>
-  <div v-if="filterdMovies.length > 0">
-    this is the search view
+  this is the search view
+  <div class="grid" v-if="filterdMovies.length > 0">
     <MovieComponent v-for="movie in filterdMovies" :key="movie" :movie="movie" />
   </div>
   <div v-else>
@@ -28,4 +30,10 @@ const filterdMovies = computed(() => {
 </template>
 
 <style scoped>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  gap: 1rem;
+}
 </style>
