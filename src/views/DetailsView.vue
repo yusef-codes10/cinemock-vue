@@ -29,6 +29,12 @@ console.log(movie)
         <div class="imdb inline bg-amber-300 text-sm px-2 py-1 text-black font-extrabold">IMDB</div>
         <div class="inline">{{ movie['#RANK'] }}</div>
       </div>
+      <div>
+        Check more details on the IMDB page:
+        <a :href="movie['#IMDB_URL']" target="_blank" rel="noopener noreferrer">
+          {{ movie['#IMDB_URL'] }}
+        </a>
+      </div>
     </div>
   </div>
 </template>
