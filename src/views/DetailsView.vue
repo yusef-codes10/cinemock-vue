@@ -10,7 +10,8 @@ console.log(slug)
 
 <template>
   <div>
-    <h1 class="text-green-300 text-9xl">Details</h1>
+    <h1 class="text-green-300 text-xl">{{ slug }}</h1>
+    we should render the movie results here
   </div>
 </template>
 
