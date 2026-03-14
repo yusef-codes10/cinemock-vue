@@ -90,6 +90,11 @@ export const moviesStore = defineStore('counter', () => {
     return movies.value.filter((movie) => movie.isFavorite === true)
   })
 
+  const allKinds = computed(() => {
+    const all = [...movies, ...shows]
+    return all
+  })
+
   return {
     movies,
     shows,
@@ -103,6 +108,7 @@ export const moviesStore = defineStore('counter', () => {
 
     // allMovies,
     favList,
+    allKinds,
   }
 })
 
