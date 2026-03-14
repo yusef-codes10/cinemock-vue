@@ -26,7 +26,8 @@ console.log(movie)
       <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie['#TITLE'] }}</h1>
       <h2>{{ movie['#ACTORS'] }}</h2>
       <div class="relative">
-        <div class="imdb inline bg-amber-300 text-sm px-3 py-1 text-black font-extrabold">IMDB</div>
+        <div class="imdb inline bg-amber-300 text-sm px-2 py-1 text-black font-extrabold">IMDB</div>
+        <div class="inline">{{ movie['#RANK'] }}</div>
       </div>
     </div>
   </div>
