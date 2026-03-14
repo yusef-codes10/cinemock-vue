@@ -33,7 +33,7 @@ export const moviesStore = defineStore('counter', () => {
     console.log('waiting!!!')
 
     try {
-      const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=spider')
+      const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=hannah')
       const data = await response.json()
 
       movies.value = data.description.map((movie) => ({

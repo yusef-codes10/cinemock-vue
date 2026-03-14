@@ -1,4 +1,5 @@
 <script setup>
+import { defineProps, computed } from 'vue'
 const { slug } = defineProps({
   slug: {
     type: String,
@@ -6,6 +7,7 @@ const { slug } = defineProps({
   },
 })
 console.log(slug)
+//* we have to find the movie from the pinia store by the slug (title in this case)
 </script>
 
 <template>
