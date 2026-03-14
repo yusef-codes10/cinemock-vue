@@ -4,6 +4,7 @@ import { defineStore } from 'pinia'
 export const moviesStore = defineStore('counter', () => {
   // * state
   const movies = ref([])
+  const shows = ref([])
   const loading = ref(false)
   // const favoriteMovies = ref([])
   // const search = ref('')
@@ -33,7 +34,7 @@ export const moviesStore = defineStore('counter', () => {
     console.log('waiting!!!')
 
     try {
-      const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=hannah+montana')
+      const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=spider')
       const data = await response.json()
 
       movies.value = data.description.map((movie) => ({
@@ -42,6 +43,29 @@ export const moviesStore = defineStore('counter', () => {
       }))
 
       console.log(movies.value)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      loading.value = false
+      console.log('loaded!')
+    }
+  }
+
+  const fetchShows = async () => {
+    loading.value = true
+    console.log('waiting!!!')
+
+    const url = 'https://imdb.iamidiotareyoutoo.com/search?q=hannah+montana'
+    try {
+      const response = await fetch(url)
+      const data = await response.json()
+
+      shows.value = data.description.map((shows) => ({
+        ...shows,
+        isFavorite: false,
+      }))
+
+      console.log(shows.value)
     } catch (error) {
       console.log(error)
     } finally {
@@ -73,6 +97,7 @@ export const moviesStore = defineStore('counter', () => {
 
     fetchMovies,
     fetchAllMovies,
+    fetchShows,
     // addToFavList,
 
     // allMovies,

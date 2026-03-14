@@ -3,6 +3,7 @@ import FavoriteMoviesView from '@/views/FavoriteMoviesView.vue'
 import HomeView from '@/views/HomeView.vue'
 import MoviesView from '@/views/MoviesView.vue'
 import SearchView from '@/views/SearchView.vue'
+import ShowsView from '@/views/ShowsView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -15,6 +16,11 @@ const routes = [
     path: '/movies',
     name: 'Movies',
     component: MoviesView,
+  },
+  {
+    path: '/shows',
+    name: 'Shows',
+    component: ShowsView,
   },
   {
     path: '/search',
