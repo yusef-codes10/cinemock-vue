@@ -113,3 +113,7 @@ export const moviesStore = defineStore('counter', () => {
 })
 
 // TODO: lazy loading and optimization for the api
+
+// TODO: complete experementing with a different api and use allPromises
+
+// TODO: add a sidebar for mobile and a better home section
