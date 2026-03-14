@@ -20,7 +20,7 @@ console.log(movie)
 <template>
   <div class="flex gap-4">
     <div class="poster bg-amber-700 w-50">
-      <img :src="movie['#POSTER']" :alt="movie['#TITLE']" />
+      <img :src="movie['#IMG_POSTER']" :alt="movie['#TITLE']" />
     </div>
     <div class="details bg-blue-400 flex-1">no</div>
   </div>
