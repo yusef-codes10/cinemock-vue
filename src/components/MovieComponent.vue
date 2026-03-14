@@ -36,7 +36,9 @@ const addToFavorite = (movie) => {
     </div>
 
     <div class="title mt-2 text-white text-sm font-semibold text-center">
-      {{ movie['#TITLE'] }}
+      <RouterLink :to="{ name: 'Details', params: { slug: movie['#TITLE'] } }">
+        {{ movie['#TITLE'] }}
+      </RouterLink>
     </div>
   </div>
 </template>
