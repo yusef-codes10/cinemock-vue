@@ -44,8 +44,7 @@ const submitSearch = () => {
         @keydown.enter="submitSearch"
       />
       <button class="rounded-md">Click</button>
+      <i class="fa-solid fa-bars text-red-600 md:text-blue-800 md:hidden"></i>
     </div>
   </nav>
 </template>
-
-<!-- TODO: Now we should get the query push it to the route and get it in the search view -->
