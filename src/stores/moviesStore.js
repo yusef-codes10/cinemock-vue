@@ -87,7 +87,7 @@ export const moviesStore = defineStore('counter', () => {
   //   return movies.value.filter((movie) => movie.toLowerCase().includes(search.value.toLowerCase()))
   // })
   const favList = computed(() => {
-    return movies.value.filter((movie) => movie.isFavorite === true)
+    return allKinds.value.filter((movie) => movie.isFavorite === true)
   })
 
   const allKinds = computed(() => {
