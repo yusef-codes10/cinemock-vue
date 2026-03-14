@@ -22,8 +22,12 @@ console.log(movie)
     <div class="poster bg-amber-700 w-50">
       <img :src="movie['#IMG_POSTER']" :alt="movie['#TITLE']" />
     </div>
-    <div class="details bg-blue-400 flex-1 flex flex-col">
+    <div class="details bg-blue-400 flex-1 flex flex-col px-2 py-1">
       <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie['#TITLE'] }}</h1>
+      <h2>{{ movie['#ACTORS'] }}</h2>
+      <div class="relative">
+        <div class="imdb inline bg-amber-300 text-sm px-3 py-1 text-black font-extrabold">IMDB</div>
+      </div>
     </div>
   </div>
 </template>
