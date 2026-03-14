@@ -31,6 +31,7 @@ const routes = [
     path: '/movies/:slug',
     name: 'Details',
     component: DetailsView,
+    props: true,
   },
 ]
 
