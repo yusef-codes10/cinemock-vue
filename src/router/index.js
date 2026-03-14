@@ -1,3 +1,4 @@
+import DetailsView from '@/views/DetailsView.vue'
 import FavoriteMoviesView from '@/views/FavoriteMoviesView.vue'
 import HomeView from '@/views/HomeView.vue'
 import MoviesView from '@/views/MoviesView.vue'
@@ -24,6 +25,12 @@ const routes = [
     path: '/favorite',
     name: 'Favorite',
     component: FavoriteMoviesView,
+  },
+  // * dynamic route
+  {
+    path: '/movies/:slug',
+    name: 'Details',
+    component: DetailsView,
   },
 ]
 
