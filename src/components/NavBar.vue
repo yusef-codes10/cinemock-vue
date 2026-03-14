@@ -27,9 +27,21 @@ const submitSearch = () => {
   <nav class="flex justify-around items-center pt-6 pb-1 pr-3 pl-3 mb-8">
     <h1 class="logo"><RouterLink :to="{ name: 'Home' }">Cinemock</RouterLink></h1>
     <ul class="hidden md:inline-flex gap-4">
-      <li><RouterLink :to="{ name: 'Movies' }">Moives</RouterLink></li>
-      <li>Shows</li>
-      <li><RouterLink :to="{ name: 'Favorite' }">Favorites</RouterLink></li>
+      <li
+        class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
+      >
+        <RouterLink :to="{ name: 'Movies' }">Moives</RouterLink>
+      </li>
+      <li
+        class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
+      >
+        Shows
+      </li>
+      <li
+        class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
+      >
+        <RouterLink :to="{ name: 'Favorite' }">Favorites</RouterLink>
+      </li>
     </ul>
     <div class="relative">
       <i
