@@ -12,15 +12,17 @@ console.log(slug)
 //* we have to find the movie from the pinia store by the slug (title in this case)
 const myStore = moviesStore()
 const movie = computed(() => {
-  return myStore.movies.filter((movie) => movie['#TITLE'] === slug)
+  return myStore.movies.find((m) => m['#TITLE'] === slug)
 })
 console.log(movie)
 </script>
 
 <template>
-  <div>
-    <h1 class="text-green-300 text-xl">{{ slug }}</h1>
-    we should render the movie results here
+  <div class="flex gap-4">
+    <div class="poster bg-amber-700 w-50">
+      <img :src="movie['#POSTER']" :alt="movie['#TITLE']" />
+    </div>
+    <div class="details bg-blue-400 flex-1">no</div>
   </div>
 </template>
 
