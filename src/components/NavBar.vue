@@ -24,7 +24,7 @@ const submitSearch = () => {
 </script>
 
 <template>
-  <nav class="flex justify-between items-center pt-6 pb-1 pr-3 pl-3 mb-8">
+  <nav class="flex justify-around items-center pt-6 pb-1 pr-3 pl-3 mb-8">
     <h1 class="logo"><RouterLink :to="{ name: 'Home' }">Cinemock</RouterLink></h1>
     <ul class="hidden md:inline-flex gap-4">
       <li><RouterLink :to="{ name: 'Movies' }">Moives</RouterLink></li>
@@ -44,7 +44,15 @@ const submitSearch = () => {
         @keydown.enter="submitSearch"
       />
       <button class="rounded-md hidden md:inline">Click</button>
-      <i class="fa-solid fa-bars text-red-600 md:text-blue-800 md:hidden"></i>
+      <i class="fa-solid fa-bars md:hidden text-red-600 ham"></i>
     </div>
   </nav>
 </template>
+
+<style scoped>
+@media (min-width: 768px) {
+  .ham {
+    display: none;
+  }
+}
+</style>
