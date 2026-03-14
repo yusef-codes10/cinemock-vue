@@ -35,7 +35,7 @@ const submitSearch = () => {
       <li
         class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
       >
-        Shows
+        <RouterLink :to="{ name: 'Shows' }">Shows</RouterLink>
       </li>
       <li
         class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
