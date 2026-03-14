@@ -91,7 +91,7 @@ export const moviesStore = defineStore('counter', () => {
   })
 
   const allKinds = computed(() => {
-    const all = [...movies, ...shows]
+    const all = [...movies.value, ...shows.value]
     return all
   })
 
