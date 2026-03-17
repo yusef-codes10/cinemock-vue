@@ -67,11 +67,11 @@ export const moviesStore = defineStore('counter', () => {
       console.log(data.results)
       shows.value = data.results.map((show) => ({
         id: show.id,
-        title: show.title,
+        title: show.name,
         image: `https://image.tmdb.org/t/p/w500${show.poster_path}`,
         isFavorite: false,
         overview: show.overview,
-        release_date: show.release_date,
+        release_date: show.first_air_date,
         rating: show.vote_average,
         genres: show.genre_ids.map((id) => GENRES[id]),
         cast: [],
