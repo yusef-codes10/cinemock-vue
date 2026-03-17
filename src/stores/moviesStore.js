@@ -6,11 +6,13 @@ export const moviesStore = defineStore('counter', () => {
   const movies = ref([])
   const shows = ref([])
   const loading = ref(false)
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY
   // const favoriteMovies = ref([])
   // const search = ref('')
 
   // * actions
   const fetchAllMovies = async () => {
+    // console.log(API_KEY)
     loading.value = true
 
     try {
@@ -52,6 +54,7 @@ export const moviesStore = defineStore('counter', () => {
   }
 
   const fetchShows = async () => {
+    console.log(API_KEY)
     loading.value = true
     console.log('waiting!!!')
 
