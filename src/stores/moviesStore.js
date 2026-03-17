@@ -31,20 +31,23 @@ export const moviesStore = defineStore('counter', () => {
       loading.value = false
     }
   }
-  const fetchMovies = async () => {
+  const fetchShows = async () => {
     loading.value = true
     console.log('waiting!!!')
 
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
     try {
-      const response = await fetch('https://imdb.iamidiotareyoutoo.com/search?q=spider')
+      const response = await fetch(url)
       const data = await response.json()
 
-      movies.value = data.description.map((movie) => ({
-        ...movie,
+      shows.value = data.results.map((show) => ({
+        id: show.id,
+        title: show.title,
+        image: `https://image.tmdb.org/t/p/w500${show.poster_path}`,
         isFavorite: false,
       }))
 
-      console.log(movies.value)
+      console.log(shows.value)
     } catch (error) {
       console.log(error)
     } finally {
@@ -53,7 +56,7 @@ export const moviesStore = defineStore('counter', () => {
     }
   }
 
-  const fetchShows = async () => {
+  const fetchMovies = async () => {
     console.log(API_KEY)
     loading.value = true
     console.log('waiting!!!')
@@ -63,14 +66,14 @@ export const moviesStore = defineStore('counter', () => {
       const response = await fetch(url)
       const data = await response.json()
 
-      shows.value = data.results.map((movie) => ({
+      movies.value = data.results.map((movie) => ({
         id: movie.id,
         title: movie.title,
         image: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
         isFavorite: false,
       }))
 
-      console.log(shows.value)
+      console.log(movies.value)
     } catch (error) {
       console.log(error)
     } finally {
