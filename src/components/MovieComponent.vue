@@ -21,8 +21,8 @@ const addToFavorite = (movie) => {
   <div class="movie-card w-48 cursor-pointer">
     <div class="poster relative">
       <img
-        :src="movie['#IMG_POSTER']"
-        :alt="movie['#TITLE']"
+        :src="movie.poster_path"
+        :alt="movie.title"
         class="w-full h-72 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
         loading="lazy"
       />
@@ -37,8 +37,8 @@ const addToFavorite = (movie) => {
     </div>
 
     <div class="title mt-2 text-white text-sm font-semibold text-center">
-      <RouterLink :to="{ name: 'Details', params: { slug: movie['#TITLE'] } }">
-        {{ movie['#TITLE'] }}
+      <RouterLink :to="{ name: 'Details', params: { slug: movie.title } }">
+        {{ movie.title }}
       </RouterLink>
     </div>
   </div>

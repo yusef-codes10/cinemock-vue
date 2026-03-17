@@ -63,8 +63,8 @@ export const moviesStore = defineStore('counter', () => {
       const response = await fetch(url)
       const data = await response.json()
 
-      shows.value = data.description.map((shows) => ({
-        ...shows,
+      shows.value = data.results.map((movie) => ({
+        ...movie,
         isFavorite: false,
       }))
 
