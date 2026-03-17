@@ -27,8 +27,8 @@ console.log(movie)
       <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie.title }}</h1>
       <h2>Actors:</h2>
       <p>{{ movie.overview }}</p>
-      <h1>Relase year:</h1>
-      <p>{{ movie.releae_date }}</p>
+      <h1>Relase date:</h1>
+      <p>{{ movie.release_date }}</p>
       <h2>Genre:</h2>
       <p v-for="genre in movie.genres" :key="genre" class="text-red-600">
         {{ genre }}
