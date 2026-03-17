@@ -57,11 +57,14 @@ export const moviesStore = defineStore('counter', () => {
     loading.value = true
     console.log('waiting!!!')
 
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+    const url = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`
     try {
       const response = await fetch(url)
       const data = await response.json()
 
+      console.log('this is the data')
+      console.log(data)
+      console.log(data.results)
       shows.value = data.results.map((show) => ({
         id: show.id,
         title: show.title,
