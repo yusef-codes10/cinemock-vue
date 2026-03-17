@@ -67,6 +67,12 @@ export const moviesStore = defineStore('counter', () => {
         title: show.title,
         image: `https://image.tmdb.org/t/p/w500${show.poster_path}`,
         isFavorite: false,
+        overview: show.overview,
+        release_date: show.release_date,
+        rating: show.vote_average,
+        genres: show.genre_ids.map((id) => GENRES[id]),
+        cast: [],
+        crew: [],
       }))
 
       console.log(shows.value)
