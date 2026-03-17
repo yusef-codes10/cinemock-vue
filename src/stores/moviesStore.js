@@ -75,6 +75,8 @@ export const moviesStore = defineStore('counter', () => {
         release_date: movie.release_date,
         rating: movie.vote_average,
         genres: movie.genres?.map((g) => g.name) || movie.genre_ids || [],
+        cast: [],
+        crew: [],
       }))
 
       console.log(movies.value)

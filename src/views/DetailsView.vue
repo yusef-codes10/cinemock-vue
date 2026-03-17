@@ -29,6 +29,10 @@ console.log(movie)
       <p>{{ movie.overview }}</p>
       <h1>Relase year:</h1>
       <p>{{ movie.releae_date }}</p>
+      <h2>Genre:</h2>
+      <p v-for="genre in movie.genres" :key="genre" class="text-red-600">
+        {{ genre }}
+      </p>
       <div class="relative">
         <div class="imdb inline bg-amber-300 text-sm px-2 py-1 text-black font-extrabold">IMDB</div>
         <div class="inline">{{ movie.rating }}</div>
