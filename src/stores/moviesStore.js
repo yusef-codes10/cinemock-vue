@@ -64,7 +64,9 @@ export const moviesStore = defineStore('counter', () => {
       const data = await response.json()
 
       shows.value = data.results.map((movie) => ({
-        ...movie,
+        id: movie.id,
+        title: movie.title,
+        image: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
         isFavorite: false,
       }))
 

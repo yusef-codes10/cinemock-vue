@@ -21,7 +21,7 @@ const addToFavorite = (movie) => {
   <div class="movie-card w-48 cursor-pointer">
     <div class="poster relative">
       <img
-        :src="movie.poster_path"
+        :src="movie.image"
         :alt="movie.title"
         class="w-full h-72 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
         loading="lazy"
