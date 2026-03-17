@@ -13,9 +13,7 @@ const searchQuery = computed(() => {
 })
 
 const filterdMovies = computed(() => {
-  return myStore.allKinds.filter((movie) =>
-    movie['#TITLE'].toLowerCase().includes(searchQuery.value)
-  )
+  return myStore.allKinds.filter((movie) => movie.title.toLowerCase().includes(searchQuery.value))
 })
 </script>
 

@@ -13,7 +13,7 @@ console.log(slug)
 const myStore = moviesStore()
 
 const movie = computed(() => {
-  return myStore.allKinds.find((m) => m['#TITLE'] === slug)
+  return myStore.allKinds.find((m) => m.title === slug)
 })
 console.log(movie)
 </script>
@@ -21,22 +21,22 @@ console.log(movie)
 <template>
   <div class="flex gap-4">
     <div class="poster w-50">
-      <img :src="movie['#IMG_POSTER']" :alt="movie['#TITLE']" />
+      <img :src="movie.image" :alt="movie.title" />
     </div>
     <div class="details flex-1 flex flex-col px-2 py-1 gap-1">
-      <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie['#TITLE'] }}</h1>
+      <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie.title }}</h1>
       <h2>Actors:</h2>
-      <p>{{ movie['#ACTORS'] }}</p>
+      <p>{{ movie.overview }}</p>
       <h1>Relase year:</h1>
-      <p>{{ movie['#YEAR'] }}</p>
+      <p>{{ movie.releae_date }}</p>
       <div class="relative">
         <div class="imdb inline bg-amber-300 text-sm px-2 py-1 text-black font-extrabold">IMDB</div>
-        <div class="inline">{{ movie['#RANK'] }}</div>
+        <div class="inline">{{ movie.rating }}</div>
       </div>
       <div>
         Check more details on the IMDB page:
-        <a :href="movie['#IMDB_URL']" target="_blank" rel="noopener noreferrer">
-          {{ movie['#IMDB_URL'] }}
+        <a :href="movie.title" target="_blank" rel="noopener noreferrer">
+          {{ movie.title }}
         </a>
       </div>
     </div>
