@@ -58,7 +58,7 @@ export const moviesStore = defineStore('counter', () => {
     loading.value = true
     console.log('waiting!!!')
 
-    const url = 'https://imdb.iamidiotareyoutoo.com/search?q=hannah+montana'
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
     try {
       const response = await fetch(url)
       const data = await response.json()
