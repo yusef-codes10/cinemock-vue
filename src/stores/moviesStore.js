@@ -71,6 +71,10 @@ export const moviesStore = defineStore('counter', () => {
         title: movie.title,
         image: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
         isFavorite: false,
+        overview: movie.overview,
+        release_date: movie.release_date,
+        rating: movie.vote_average,
+        genres: movie.genres?.map((g) => g.name) || movie.genre_ids || [],
       }))
 
       console.log(movies.value)
