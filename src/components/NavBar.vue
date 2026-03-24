@@ -22,7 +22,9 @@ const submitSearch = () => {
   })
 }
 
-const sidebar = () => console.log('Side bar appeared')
+const emit = defineEmits(['show'])
+
+const triggerTheEmit = () => emit('show')
 </script>
 
 <template>
@@ -58,7 +60,7 @@ const sidebar = () => console.log('Side bar appeared')
         @keydown.enter="submitSearch"
       />
       <button class="rounded-md hidden md:inline">Click</button>
-      <i class="fa-solid fa-bars md:hidden text-red-600 ham" @click="sidebar"></i>
+      <i class="fa-solid fa-bars md:hidden text-red-600 ham" @click="triggerTheEmit"></i>
     </div>
   </nav>
 </template>
