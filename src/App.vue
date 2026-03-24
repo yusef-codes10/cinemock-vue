@@ -10,14 +10,20 @@ const isVisible = ref(false)
 
 // define the emit handlers
 // hide
-const hideSideBar = () => {}
+const hideSideBar = () => {
+  isVisible.value = false
+}
+
+const showSideBar = () => {
+  isVisible.value = true
+}
 </script>
 
 <template>
   <div class="flex flex-col h-screen">
     <div v-if="route.name === 'Home'" class="flex-1 bg-cover bg-center hero-bg">
       <NavBar />
-      <SideBar :visible="isVisible" />
+      <SideBar v-show="isVisible" />
       <RouterView />
     </div>
     <div v-else class="flex-1">
