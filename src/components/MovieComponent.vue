@@ -18,8 +18,8 @@ const addToFavorite = (movie) => {
 </script>
 
 <template>
-  <div class="movie-card w-full cursor-pointer bg-amber-300">
-    <div class="poster relative bg-green-500">
+  <div class="movie-card w-48 cursor-pointer">
+    <div class="poster relative">
       <img
         :src="movie.image"
         :alt="movie.title"

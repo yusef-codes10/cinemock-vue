@@ -24,6 +24,7 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
   justify-content: center;
+  justify-items: center;
   gap: 1rem;
 }
 </style>
