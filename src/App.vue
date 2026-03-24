@@ -28,6 +28,7 @@ const showSideBar = () => {
     </div>
     <div v-else class="flex-1">
       <NavBar />
+      <SideBar v-show="isVisible" @hide="hideSideBar" />
 
       <RouterView />
     </div>
