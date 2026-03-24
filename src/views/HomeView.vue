@@ -16,7 +16,7 @@
         class="w-full px-4 py-3 rounded bg-white/20 backdrop-blur outline-none"
         placeholder="Email"
       />
-      <button class="w-full sm:w-auto px-6 py-3 bg-red-600 rounded font-semibold">
+      <button class="px-6 py-3 bg-red-600 rounded font-semibold whitespace-nowrap">
         Get Started
       </button>
     </div>
