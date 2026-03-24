@@ -21,6 +21,8 @@ const submitSearch = () => {
     query: { q: searchQuery.value },
   })
 }
+
+const sidebar = () => console.log('Side bar appeared')
 </script>
 
 <template>
@@ -56,7 +58,7 @@ const submitSearch = () => {
         @keydown.enter="submitSearch"
       />
       <button class="rounded-md hidden md:inline">Click</button>
-      <i class="fa-solid fa-bars md:hidden text-red-600 ham"></i>
+      <i class="fa-solid fa-bars md:hidden text-red-600 ham" @click="sidebar"></i>
     </div>
   </nav>
 </template>
