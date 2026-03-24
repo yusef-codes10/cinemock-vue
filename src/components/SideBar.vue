@@ -1,5 +1,11 @@
 <script setup>
 const emit = defineEmits(['hide'])
+defineProps({
+  visible: {
+    type: String,
+    required: true,
+  },
+})
 
 const triggerTheEmit = () => {
   emit('hide')
