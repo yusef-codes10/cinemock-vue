@@ -17,9 +17,6 @@ onMounted(() => {
     <div v-if="myStore.loading">....Loaaaaading</div>
     <MovieComponent v-for="show in myStore.shows" :key="show['#TITLE']" :movie="show" />
   </div>
-  <div v-for="show in myStore.shows" :key="show['#TITLE']" :movie="show">
-    <h1 class="text-red-500">{{ show.isFavorite }}</h1>
-  </div>
 </template>
 
 <style scoped>
