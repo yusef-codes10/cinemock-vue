@@ -22,7 +22,7 @@ onMounted(() => {
 <style scoped>
 .shows-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
   justify-content: center;
   gap: 1rem;
 }
