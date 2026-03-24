@@ -6,7 +6,7 @@ import SideBar from './components/SideBar.vue'
 
 const route = useRoute()
 
-const isVisible = ref(true)
+const isVisible = ref(false)
 
 // define the emit handlers
 // hide
@@ -22,7 +22,7 @@ const showSideBar = () => {
 <template>
   <div class="flex flex-col h-screen">
     <div v-if="route.name === 'Home'" class="flex-1 bg-cover bg-center hero-bg">
-      <NavBar />
+      <NavBar @show="showSideBar" />
       <SideBar v-show="isVisible" @hide="hideSideBar" />
       <RouterView />
     </div>
