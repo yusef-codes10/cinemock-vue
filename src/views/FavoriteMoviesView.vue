@@ -15,8 +15,9 @@ const myStore = moviesStore()
 <style scoped>
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
+  justify-items: center;
   gap: 1rem;
 }
 </style>
