@@ -34,10 +34,12 @@ console.log('this is the cast: ', cast)
     </div>
     <div class="details flex-1 flex flex-col px-2 py-1 gap-1">
       <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie.title }}</h1>
-      <h2>Actors:</h2>
-      <p v-for="actor in cast" :key="actor">{{ actor.name }}</p>
       <h2>Overviiew:</h2>
       <p>{{ movie.overview }}</p>
+      <h2>Actors:</h2>
+      <p v-for="actor in cast" :key="actor">
+        {{ actor.name }} <span class="text-extrabold">As</span> {{ actor.character }}
+      </p>
       <h1>Relase date:</h1>
       <p>{{ movie.release_date }}</p>
       <h2>Genre:</h2>
