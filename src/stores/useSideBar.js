@@ -1,9 +1,10 @@
 // src/stores/sidebar.js
 import { ref } from 'vue'
+import { defineStore } from 'pinia'
 
-const isVisible = ref(true)
+export const useSidebar = defineStore('useSideBar', () => {
+  const isVisible = ref(true)
 
-export function useSidebar() {
   const show = () => (isVisible.value = true)
   const hide = () => (isVisible.value = false)
   const toggle = () => (isVisible.value = !isVisible.value)
@@ -14,4 +15,4 @@ export function useSidebar() {
     hide,
     toggle,
   }
-}
+})

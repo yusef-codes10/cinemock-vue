@@ -9,19 +9,19 @@ const route = useRoute()
 // define the emit handlers
 // hide
 
-const { isVisible, hide } = useSidebar()
+const sideStore = useSidebar()
 </script>
 
 <template>
   <div class="flex flex-col h-screen">
     <div v-if="route.name === 'Home'" class="flex-1 bg-cover bg-center hero-bg">
       <NavBar />
-      <SideBar v-show="isVisible" @hide="hide" />
+      <SideBar v-show="sideStore.isVisible" @hide="hide" />
       <RouterView />
     </div>
     <div v-else class="flex-1">
       <NavBar />
-      <SideBar v-show="isVisible" @hide="hide" />
+      <SideBar v-show="sideStore.isVisible" @hide="hide" />
 
       <RouterView />
     </div>
