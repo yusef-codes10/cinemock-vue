@@ -5,6 +5,7 @@ export const moviesStore = defineStore('counter', () => {
   // * state
   const movies = ref([])
   const shows = ref([])
+  const cast = ref([])
   const loading = ref(false)
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY
   // const favoriteMovies = ref([])
@@ -127,11 +128,11 @@ export const moviesStore = defineStore('counter', () => {
   //   favoriteMovies.value.push(movie)
   // }
 
-  const fetchCast = (movie) => {
+  const fetchCast = (movieId) => {
     const url =
-      'https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=${API_KEY}  /movie/{movie_id}/credits'
+      'https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=${API_KEY}  /movie/{movie_id}/credits'
     try {
-      console.log('hey')
+      console.log(url)
     } catch (error) {
       console.log(error)
     }
@@ -154,6 +155,7 @@ export const moviesStore = defineStore('counter', () => {
     movies,
     shows,
     loading,
+    cast,
     // favoriteMovies,
 
     fetchMovies,
