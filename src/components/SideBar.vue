@@ -22,16 +22,16 @@ const triggerTheEmit = () => {
       <h2 class="text-xl font-bold mb-4">Sidebar</h2>
       <ul class="flex flex-col gap-3">
         <li class="cursor-pointer hover:text-red-500">
-          <RouterLink :to="{ name: 'Home' }">Home</RouterLink>
+          <RouterLink :to="{ name: 'Home' }" @click="triggerTheEmit">Home</RouterLink>
         </li>
         <li class="cursor-pointer hover:text-red-500">
-          <RouterLink :to="{ name: 'Movies' }">Movies</RouterLink>
+          <RouterLink :to="{ name: 'Movies' }" @click="triggerTheEmit">Movies</RouterLink>
         </li>
         <li class="cursor-pointer hover:text-red-500">
-          <RouterLink :to="{ name: 'Shows' }">Shows</RouterLink>
+          <RouterLink :to="{ name: 'Shows' }" @click="triggerTheEmit">Shows</RouterLink>
         </li>
         <li class="cursor-pointer hover:text-red-500">
-          <RouterLink :to="{ name: 'Favorite' }">Favorites</RouterLink>
+          <RouterLink :to="{ name: 'Favorite' }" @click="triggerTheEmit">Favorites</RouterLink>
         </li>
       </ul>
 
