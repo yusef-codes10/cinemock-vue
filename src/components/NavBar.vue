@@ -23,7 +23,7 @@ const submitSearch = () => {
   })
 }
 
-const { toggle } = useSidebar()
+const { toggle, close } = useSidebar()
 </script>
 
 <template>
@@ -33,17 +33,17 @@ const { toggle } = useSidebar()
       <li
         class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
       >
-        <RouterLink :to="{ name: 'Movies' }" @click="toggle">Moives</RouterLink>
+        <RouterLink :to="{ name: 'Movies' }" @click="close">Moives</RouterLink>
       </li>
       <li
         class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
       >
-        <RouterLink :to="{ name: 'Shows' }" @click="toggle">Shows</RouterLink>
+        <RouterLink :to="{ name: 'Shows' }" @click="close">Shows</RouterLink>
       </li>
       <li
         class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
       >
-        <RouterLink :to="{ name: 'Favorite' }" @click="toggle">Favorites</RouterLink>
+        <RouterLink :to="{ name: 'Favorite' }" @click="close">Favorites</RouterLink>
       </li>
     </ul>
     <div class="relative">
@@ -59,7 +59,7 @@ const { toggle } = useSidebar()
         @keydown.enter="submitSearch"
       />
       <button class="rounded-md hidden md:inline">Click</button>
-      <i class="fa-solid fa-bars md:hidden text-red-600 ham" @click="triggerTheEmit"></i>
+      <i class="fa-solid fa-bars md:hidden text-red-600 ham" @click="toggle"></i>
     </div>
   </nav>
 </template>
