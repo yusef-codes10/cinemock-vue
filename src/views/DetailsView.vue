@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { moviesStore } from '@/stores/moviesStore.js'
 
 const { slug } = defineProps({
@@ -9,6 +9,8 @@ const { slug } = defineProps({
   },
 })
 console.log(slug)
+
+const cast = ref([])
 //* we have to find the movie from the pinia store by the slug (title in this case)
 const myStore = moviesStore()
 
@@ -17,10 +19,12 @@ const movie = computed(() => {
 })
 console.log(movie)
 
-const cast = onMounted(async () => {
+onMounted(async () => {
   // here we fetch the movie cast
-  myStore.fetchCast(movie.value.id)
+  const data = await myStore.fetchCast(movie.value.id)
+  cast.value = data
 })
+console.log('this is the cast: ', cast)
 </script>
 
 <template>
@@ -31,7 +35,8 @@ const cast = onMounted(async () => {
     <div class="details flex-1 flex flex-col px-2 py-1 gap-1">
       <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie.title }}</h1>
       <h2>Actors:</h2>
-      <p>{{ cast }}</p>
+      <p v-for="actor in cast" :key="actor">{{ actor.name }}</p>
+      <h2>Overviiew:</h2>
       <p>{{ movie.overview }}</p>
       <h1>Relase date:</h1>
       <p>{{ movie.release_date }}</p>
