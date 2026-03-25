@@ -13,12 +13,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <label for="fruits">Choose a filter:</label>
-  <select id="fruits" name="fruit">
-    <option value="apple">Apple</option>
-    <option value="banana">Banana</option>
-    <option value="cherry" selected>Cherry</option>
-  </select>
+  <div class="my-4 mx-4">
+    <label for="g">Choose a filter:</label>
+
+    <select id="g" name="genre">
+      <option
+        class="text-white border-2 bg-black"
+        v-for="[id, name] in Object.entries(myStore.GENRES)"
+        :key="id"
+        :value="id"
+      >
+        {{ name }}
+      </option>
+    </select>
+  </div>
   <div class="movies-grid">
     <div v-if="myStore.loading">....Loaaaaading</div>
     <MovieComponent v-for="movie in myStore.movies" :key="movie['#TITLE']" :movie="movie" />
