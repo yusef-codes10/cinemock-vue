@@ -1,12 +1,6 @@
 <script setup>
 import { useSidebar } from '@/stores/useSideBar'
 
-const emit = defineEmits(['hide'])
-
-const triggerTheEmit = () => {
-  emit('hide')
-}
-
 const sideStore = useSidebar()
 </script>
 
@@ -20,16 +14,16 @@ const sideStore = useSidebar()
       <h2 class="text-xl font-bold mb-4">Sidebar</h2>
       <ul class="flex flex-col gap-3">
         <li class="cursor-pointer hover:text-red-500">
-          <RouterLink :to="{ name: 'Home' }" @click="triggerTheEmit">Home</RouterLink>
+          <RouterLink :to="{ name: 'Home' }" @click="sideStore.hide">Home</RouterLink>
         </li>
         <li class="cursor-pointer hover:text-red-500">
-          <RouterLink :to="{ name: 'Movies' }" @click="triggerTheEmit">Movies</RouterLink>
+          <RouterLink :to="{ name: 'Movies' }" @click="sideStore.hide">Movies</RouterLink>
         </li>
         <li class="cursor-pointer hover:text-red-500">
-          <RouterLink :to="{ name: 'Shows' }" @click="triggerTheEmit">Shows</RouterLink>
+          <RouterLink :to="{ name: 'Shows' }" @click="sideStore.hide">Shows</RouterLink>
         </li>
         <li class="cursor-pointer hover:text-red-500">
-          <RouterLink :to="{ name: 'Favorite' }" @click="triggerTheEmit">Favorites</RouterLink>
+          <RouterLink :to="{ name: 'Favorite' }" @click="sideStore.hide">Favorites</RouterLink>
         </li>
       </ul>
 
