@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { moviesStore } from '@/stores/moviesStore.js'
 
 const { slug } = defineProps({
@@ -16,6 +16,10 @@ const movie = computed(() => {
   return myStore.allKinds.find((m) => m.title === slug)
 })
 console.log(movie)
+
+onMounted( async () => {
+  // here we fetch the movie cast
+}),
 </script>
 
 <template>
