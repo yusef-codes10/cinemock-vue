@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useSidebar } from '@/stores/useSideBar'
 
 const isSearch = ref(false)
 const searchQuery = ref('')
@@ -22,9 +23,7 @@ const submitSearch = () => {
   })
 }
 
-const emit = defineEmits(['show'])
-
-const triggerTheEmit = () => emit('show')
+const { toggle } = useSidebar()
 </script>
 
 <template>
@@ -34,17 +33,17 @@ const triggerTheEmit = () => emit('show')
       <li
         class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
       >
-        <RouterLink :to="{ name: 'Movies' }">Moives</RouterLink>
+        <RouterLink :to="{ name: 'Movies' }" @click="toggle">Moives</RouterLink>
       </li>
       <li
         class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
       >
-        <RouterLink :to="{ name: 'Shows' }">Shows</RouterLink>
+        <RouterLink :to="{ name: 'Shows' }" @click="toggle">Shows</RouterLink>
       </li>
       <li
         class="relative cursor-pointer after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
       >
-        <RouterLink :to="{ name: 'Favorite' }">Favorites</RouterLink>
+        <RouterLink :to="{ name: 'Favorite' }" @click="toggle">Favorites</RouterLink>
       </li>
     </ul>
     <div class="relative">
