@@ -33,3 +33,6 @@ const sideStore = useSidebar()
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/images/hero.jpg);
 }
 </style>
+
+<!-- TODO: fix the conditional rendering, always render from once source (computed + all movies) + show not available when the genre is not included-->
+<!-- TODO: use a global search filed to search a movie on demand -->
