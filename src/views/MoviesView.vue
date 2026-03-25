@@ -10,14 +10,14 @@ onMounted(() => {
     myStore.fetchMovies()
   }
 })
-// const selectedGenre = ref(null)
+const selectedGenre = ref(null)
 
-const showFilter = (name) => {
+const showFilter = (event) => {
   // event.target.value is the selected option's value (the id)
-  // const genreId = Number(event.target.value)
-  // const genreName = myStore.GENRES[genreId]
-  console.log('The filter is:', name)
-  // selectedGenre.value = genreId
+  const genreId = Number(event.target.value)
+  const genreName = myStore.GENRES[genreId]
+  console.log('The filter is:', genreName)
+  selectedGenre.value = genreId
 }
 </script>
 
@@ -25,7 +25,7 @@ const showFilter = (name) => {
   <div class="my-4 mx-4">
     <label for="g">Choose a filter:</label>
 
-    <select id="g" name="genre" @change="showFilter(name)">
+    <select id="g" name="genre" @change="showFilter">
       <option
         class="text-white border-2 bg-black"
         v-for="[id, name] in Object.entries(myStore.GENRES)"
