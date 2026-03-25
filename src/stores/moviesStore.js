@@ -128,11 +128,12 @@ export const moviesStore = defineStore('counter', () => {
   //   favoriteMovies.value.push(movie)
   // }
 
-  const fetchCast = (movieId) => {
-    const url =
-      'https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=${API_KEY}  /movie/{movie_id}/credits'
+  const fetchCast = async (movieId) => {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`
     try {
-      console.log(url)
+      const res = await fetch(url)
+      const data = await res.json()
+      console.log(`the cast is: ${data}`)
     } catch (error) {
       console.log(error)
     }

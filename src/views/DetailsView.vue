@@ -19,7 +19,7 @@ console.log(movie)
 
 const cast = onMounted(async () => {
   // here we fetch the movie cast
-  moviesStore.fetchCast(movie.value.id)
+  myStore.fetchCast(movie.value.id)
 })
 </script>
 
