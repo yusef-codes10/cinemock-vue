@@ -17,9 +17,10 @@ const movie = computed(() => {
 })
 console.log(movie)
 
-onMounted( async () => {
+const cast = onMounted(async () => {
   // here we fetch the movie cast
-}),
+  moviesStore.fetchCast(movie.value.id)
+})
 </script>
 
 <template>
@@ -30,6 +31,7 @@ onMounted( async () => {
     <div class="details flex-1 flex flex-col px-2 py-1 gap-1">
       <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie.title }}</h1>
       <h2>Actors:</h2>
+      <p>{{ cast }}</p>
       <p>{{ movie.overview }}</p>
       <h1>Relase date:</h1>
       <p>{{ movie.release_date }}</p>
