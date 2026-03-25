@@ -1,15 +1,13 @@
 <script setup>
+import { useSidebar } from '@/stores/useSideBar'
+
 const emit = defineEmits(['hide'])
-// defineProps({
-//   visible: {
-//     type: String,
-//     required: true,
-//   },
-// })
 
 const triggerTheEmit = () => {
   emit('hide')
 }
+
+const sideStore = useSidebar()
 </script>
 
 <template>
@@ -36,7 +34,7 @@ const triggerTheEmit = () => {
       </ul>
 
       <!-- Close button -->
-      <i class="fa-solid fa-xmark absolute top-5 right-5" @click="triggerTheEmit"></i>
+      <i class="fa-solid fa-xmark absolute top-5 right-5" @click="sideStore.hide"></i>
     </div>
   </div>
 </template>
