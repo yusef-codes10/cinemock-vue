@@ -1,7 +1,7 @@
 // src/stores/sidebar.js
 import { ref } from 'vue'
 
-const isVisible = ref(false)
+const isVisible = ref(true)
 
 export function useSidebar() {
   const show = () => (isVisible.value = true)
