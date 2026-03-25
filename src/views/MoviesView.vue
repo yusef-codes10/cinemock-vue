@@ -20,6 +20,7 @@ const showFilter = (event) => {
   console.log('The filter is:', genreName)
   selectedGenre.value = genreId
   selectedGenreName.value = genreName
+  console.log('this is the filtered list: \n', filteredMovies.value)
 }
 
 const filteredMovies = computed(() => {
