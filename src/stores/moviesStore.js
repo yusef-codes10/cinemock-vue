@@ -98,6 +98,7 @@ export const moviesStore = defineStore('counter', () => {
       const response = await fetch(url)
       const data = await response.json()
 
+      console.log('this is the movie unmapped data', data)
       movies.value = data.results.map((movie) => ({
         id: movie.id,
         title: movie.title,
@@ -161,6 +162,7 @@ export const moviesStore = defineStore('counter', () => {
     shows,
     loading,
     cast,
+    GENRES,
     // favoriteMovies,
 
     fetchMovies,
