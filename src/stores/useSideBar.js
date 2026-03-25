@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useSidebar = defineStore('useSideBar', () => {
-  const isVisible = ref(true)
+  const isVisible = ref(false)
 
   const show = () => (isVisible.value = true)
   const hide = () => (isVisible.value = false)
