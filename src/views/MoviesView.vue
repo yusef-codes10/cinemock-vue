@@ -45,9 +45,13 @@ console.log('this is the filtered list: \n', filteredMovies.value)
       </option>
     </select>
   </div>
-  <div class="movies-grid">
+  <div class="movies-grid" v-if="filteredMovies.length === 0">
     <div v-if="myStore.loading">....Loaaaaading</div>
     <MovieComponent v-for="movie in myStore.movies" :key="movie['#TITLE']" :movie="movie" />
+  </div>
+  <div class="movies-grid" v-else>
+    <div v-if="myStore.loading">....Loaaaaading</div>
+    <MovieComponent v-for="movie in filteredMovies" :key="movie['#TITLE']" :movie="movie" />
   </div>
 </template>
 
