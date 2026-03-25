@@ -127,6 +127,16 @@ export const moviesStore = defineStore('counter', () => {
   //   favoriteMovies.value.push(movie)
   // }
 
+  const fetchCast = (movie) => {
+    const url =
+      'https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=${API_KEY}  /movie/{movie_id}/credits'
+    try {
+      console.log('hey')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   // * getters
   // const allMovies = computed(() => {
   //   return movies.value.filter((movie) => movie.toLowerCase().includes(search.value.toLowerCase()))
@@ -149,6 +159,7 @@ export const moviesStore = defineStore('counter', () => {
     fetchMovies,
     fetchAllMovies,
     fetchShows,
+    fetchCast,
     // addToFavList,
 
     // allMovies,
@@ -160,5 +171,3 @@ export const moviesStore = defineStore('counter', () => {
 // TODO: lazy loading and optimization for the api
 
 // TODO: complete experementing with a different api and use allPromises
-
-// TODO: add a sidebar for mobile and a better home section
