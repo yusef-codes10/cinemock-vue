@@ -1,7 +1,7 @@
 <script setup>
 import MovieComponent from '@/components/MovieComponent.vue'
 import { moviesStore } from '@/stores/moviesStore.js'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 
 const myStore = moviesStore()
 
@@ -11,6 +11,7 @@ onMounted(() => {
   }
 })
 const selectedGenre = ref(null)
+const selectedGenreName = ref(null)
 
 const showFilter = (event) => {
   // event.target.value is the selected option's value (the id)
@@ -18,7 +19,14 @@ const showFilter = (event) => {
   const genreName = myStore.GENRES[genreId]
   console.log('The filter is:', genreName)
   selectedGenre.value = genreId
+  selectedGenreName.value = genreName
 }
+
+const filteredMovies = computed(() => {
+  return myStore.movies.filter((m) => m.genres.includes(selectedGenreName.value))
+})
+
+console.log('this is the filtered list: \n', filteredMovies.value)
 </script>
 
 <template>
