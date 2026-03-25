@@ -19,7 +19,7 @@ console.log(movie)
 </script>
 
 <template>
-  <div class="flex gap-4">
+  <div class="flex gap-4 flex-col md:flex-row bg-pink-600 md:bg-green-500">
     <div class="poster w-50">
       <img :src="movie.image" :alt="movie.title" />
     </div>
