@@ -133,7 +133,11 @@ export const moviesStore = defineStore('counter', () => {
     try {
       const res = await fetch(url)
       const data = await res.json()
-      console.log(`the cast is: ${data}`)
+      cast.value = data.cast.map((actor) => ({
+        charcter: actor.charcter,
+        name: actor.name,
+      }))
+      console.log('the cast is: ', data)
     } catch (error) {
       console.log(error)
     }
