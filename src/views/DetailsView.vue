@@ -19,9 +19,9 @@ console.log(movie)
 </script>
 
 <template>
-  <div class="flex gap-4 flex-col md:flex-row bg-pink-600 md:bg-green-500">
-    <div class="poster w-50">
-      <img :src="movie.image" :alt="movie.title" />
+  <div class="flex gap-4 flex-col md:flex-row">
+    <div class="poster w-full md:w-64 aspect-2/3 overflow-hidden rounded-lg">
+      <img :src="movie.image" :alt="movie.title" class="w-full h-full object-cover" />
     </div>
     <div class="details flex-1 flex flex-col px-2 py-1 gap-1">
       <h1 class="text-center text-2xl md:text-4xl my-3">{{ movie.title }}</h1>
